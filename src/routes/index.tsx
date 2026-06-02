@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
-import heroAi from "@/assets/hero-ai.jpg";
-import avatar from "@/assets/avatar.jpg";
+import portrait from "@/assets/nithin-portrait.png.asset.json";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
 import projParking from "@/assets/project-parking.jpg";
