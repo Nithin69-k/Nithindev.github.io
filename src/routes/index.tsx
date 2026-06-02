@@ -113,12 +113,14 @@ function Nav() {
 }
 
 function Hero() {
+  const blob1 = useParallax<HTMLDivElement>(0.12);
+  const blob2 = useParallax<HTMLDivElement>(-0.08);
   return (
     <section id="top" className="relative overflow-hidden">
       {/* Soft hero gradient + animated yellow blob */}
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
-      <div aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl animate-blob -z-10" />
-      <div aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl animate-blob delay-300 -z-10" />
+      <div ref={blob1} aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl animate-blob -z-10 will-change-transform" />
+      <div ref={blob2} aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl animate-blob delay-300 -z-10 will-change-transform" />
 
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-3 py-1 text-xs text-muted-foreground mb-8 animate-fade-up">
