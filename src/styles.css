@@ -195,6 +195,20 @@
 .hover-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
 .hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 
+/* Scroll reveal — starts hidden, animates in when .is-visible toggles. */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y, 24px), 0);
+  transition:
+    opacity 0.8s cubic-bezier(.2,.7,.2,1),
+    transform 0.9s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 .text-shimmer {
   background: linear-gradient(90deg, var(--ink) 0%, var(--ink) 40%, oklch(0.78 0.18 70) 50%, var(--ink) 60%, var(--ink) 100%);
   background-size: 200% 100%;
