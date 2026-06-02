@@ -343,17 +343,17 @@ function Certifications() {
 function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="rounded-3xl border border-border bg-surface p-8 md:p-14 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-60" style={{ background: "var(--gradient-hero)" }} />
+      <div className="rounded-3xl bg-[var(--ink)] text-[var(--ink-foreground)] p-8 md:p-14 relative overflow-hidden shadow-[var(--shadow-card)]">
+        <div aria-hidden className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-primary/25 blur-3xl animate-blob -z-0" />
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ready to build something intelligent?</h2>
-            <p className="mt-4 text-muted-foreground">Whether it's a predictive model, a GenAI feature, or a full data pipeline — let's talk.</p>
-            <a href="mailto:nithingowda490@gmail.com" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-[var(--shadow-glow)]">
+          <div className="relative">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ready to build something <span className="text-primary">intelligent?</span></h2>
+            <p className="mt-4 text-white/70">Whether it's a predictive model, a GenAI feature, or a full data pipeline — let's talk.</p>
+            <a href="mailto:nithingowda490@gmail.com" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition shadow-[var(--shadow-glow)]">
               <Mail className="w-4 h-4" /> Contact Nithin
             </a>
           </div>
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm relative">
             <ContactRow icon={Mail} label="nithingowda490@gmail.com" href="mailto:nithingowda490@gmail.com" />
             <ContactRow icon={Phone} label="+91 8217264796" href="tel:+918217264796" />
             <ContactRow icon={MapPin} label="Bengaluru, Karnataka, India" />
@@ -368,8 +368,8 @@ function Contact() {
 
 function ContactRow({ icon: Icon, label, href }: { icon: typeof Mail; label: string; href?: string }) {
   const inner = (
-    <div className="flex items-center gap-3 rounded-xl border border-border bg-background/50 px-4 py-3 hover:border-primary/50 transition">
-      <span className="grid place-items-center w-9 h-9 rounded-lg bg-primary/10 text-primary"><Icon className="w-4 h-4" /></span>
+    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur px-4 py-3 hover:border-primary/60 hover:bg-white/10 transition">
+      <span className="grid place-items-center w-9 h-9 rounded-lg bg-primary/20 text-primary"><Icon className="w-4 h-4" /></span>
       <span>{label}</span>
     </div>
   );
