@@ -318,10 +318,11 @@ function Certifications() {
       <SectionHeader tag="Certifications" title="Credentials & publications" />
       <div className="grid sm:grid-cols-2 gap-3">
         {certs.map((c) => (
-          <div key={c} className="rounded-xl border border-border bg-surface px-5 py-4 text-sm flex items-center gap-3">
+          <a key={c.label} href={c.url} target="_blank" rel="noreferrer" className="group rounded-xl border border-border bg-surface px-5 py-4 text-sm flex items-center gap-3 hover:border-primary/60 transition">
             <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-            {c}
-          </div>
+            <span className="flex-1">{c.label}</span>
+            <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition" />
+          </a>
         ))}
       </div>
     </section>
