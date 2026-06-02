@@ -205,8 +205,8 @@ function Services() {
     <section id="services" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="What I do" title="Core capabilities & services" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map((s) => (
-          <div key={s.title} className="group rounded-2xl border border-border bg-surface p-6 hover:border-primary/50 hover:bg-surface-elevated transition">
+        {services.map((s, i) => (
+          <div key={s.title} style={{ animationDelay: `${i * 80}ms` }} className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="w-10 h-10 grid place-items-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition">
               <s.icon className="w-5 h-5" />
             </div>
@@ -229,8 +229,8 @@ function Projects() {
         </div>
       </div>
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((p) => (
-          <a key={p.title} href={p.link} className="group rounded-2xl border border-border bg-surface overflow-hidden hover:border-primary/50 transition">
+        {projects.map((p, i) => (
+          <a key={p.title} href={p.link} style={{ animationDelay: `${i * 100}ms` }} className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="aspect-[4/3] overflow-hidden bg-muted">
               <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
@@ -254,8 +254,8 @@ function Experience() {
     <section id="experience" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Experience" title="Work history" />
       <div className="space-y-4">
-        {experience.map((e) => (
-          <div key={e.role} className="rounded-2xl border border-border bg-surface p-6 md:p-8 hover:border-primary/50 transition">
+        {experience.map((e, i) => (
+          <div key={e.role} style={{ animationDelay: `${i * 100}ms` }} className="rounded-2xl border border-border bg-card p-6 md:p-8 hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
               <h3 className="font-semibold text-lg">{e.role}</h3>
               <span className="text-xs text-primary font-mono">{e.period}</span>
@@ -287,11 +287,11 @@ function SkillsSection() {
       <SectionHeader tag="Technical Inventory" title="Skills & tools" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Object.entries(skills).map(([cat, list]) => (
-          <div key={cat} className="rounded-2xl border border-border bg-surface p-6">
+          <div key={cat} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <h3 className="text-sm font-semibold text-primary mb-4">{cat}</h3>
             <div className="flex flex-wrap gap-2">
               {list.map((s) => (
-                <span key={s} className="rounded-full border border-border bg-background px-3 py-1 text-xs">{s}</span>
+                <span key={s} className="rounded-full border border-border bg-background px-3 py-1 text-xs hover:border-primary hover:text-primary transition">{s}</span>
               ))}
             </div>
           </div>
@@ -312,7 +312,7 @@ function Education() {
       <SectionHeader tag="Education" title="Academic background" />
       <div className="grid md:grid-cols-3 gap-4">
         {items.map((i) => (
-          <div key={i.title} className="rounded-2xl border border-border bg-surface p-6">
+          <div key={i.title} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <p className="text-xs text-primary font-mono mb-3">{i.period}</p>
             <h3 className="font-semibold mb-1">{i.title}</h3>
             <p className="text-sm text-muted-foreground">{i.org}</p>
