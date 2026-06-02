@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, Download, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database } from "lucide-react";
 import heroAi from "@/assets/hero-ai.jpg";
 import avatar from "@/assets/avatar.jpg";
 import projChurn from "@/assets/project-churn.jpg";
