@@ -209,13 +209,13 @@ function Services() {
       <SectionHeader tag="What I do" title="Core capabilities & services" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.map((s, i) => (
-          <div key={s.title} style={{ animationDelay: `${i * 80}ms` }} className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-primary/60 transition animate-fade-up">
+          <Reveal key={s.title} delay={i * 80} className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-primary/60 transition">
             <div className="w-10 h-10 grid place-items-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition">
               <s.icon className="w-5 h-5" />
             </div>
             <h3 className="font-semibold mb-1.5">{s.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -233,7 +233,8 @@ function Projects() {
       </div>
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p, i) => (
-          <a key={p.title} href={p.link} style={{ animationDelay: `${i * 100}ms` }} className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition animate-fade-up">
+          <Reveal key={p.title} as="a" delay={i * 100} className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block" style={{ }}>
+            <a href={p.link} className="contents">
             <div className="aspect-[4/3] overflow-hidden bg-muted">
               <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
@@ -245,7 +246,8 @@ function Projects() {
               <p className="text-xs text-primary mt-2 font-mono">{p.tech}</p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.desc}</p>
             </div>
-          </a>
+            </a>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -258,7 +260,7 @@ function Experience() {
       <SectionHeader tag="Experience" title="Work history" />
       <div className="space-y-4">
         {experience.map((e, i) => (
-          <div key={e.role} style={{ animationDelay: `${i * 100}ms` }} className="rounded-2xl border border-border bg-card p-6 md:p-8 hover-lift hover:border-primary/60 transition animate-fade-up">
+          <Reveal key={e.role} delay={i * 100} className="rounded-2xl border border-border bg-card p-6 md:p-8 hover-lift hover:border-primary/60 transition">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
               <h3 className="font-semibold text-lg">{e.role}</h3>
               <span className="text-xs text-primary font-mono">{e.period}</span>
@@ -277,7 +279,7 @@ function Experience() {
                 <ExternalLink className="w-3.5 h-3.5" /> {e.letterLabel ?? "View letter"}
               </a>
             ) : null}
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -289,15 +291,15 @@ function SkillsSection() {
     <section id="skills" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Technical Inventory" title="Skills & tools" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {Object.entries(skills).map(([cat, list]) => (
-          <div key={cat} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
+        {Object.entries(skills).map(([cat, list], i) => (
+          <Reveal key={cat} delay={i * 70} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <h3 className="text-sm font-semibold text-primary mb-4">{cat}</h3>
             <div className="flex flex-wrap gap-2">
               {list.map((s) => (
                 <span key={s} className="rounded-full border border-border bg-background px-3 py-1 text-xs hover:border-primary hover:text-primary transition">{s}</span>
               ))}
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -314,12 +316,12 @@ function Education() {
     <section className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Education" title="Academic background" />
       <div className="grid md:grid-cols-3 gap-4">
-        {items.map((i) => (
-          <div key={i.title} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
+        {items.map((i, idx) => (
+          <Reveal key={i.title} delay={idx * 90} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <p className="text-xs text-primary font-mono mb-3">{i.period}</p>
             <h3 className="font-semibold mb-1">{i.title}</h3>
             <p className="text-sm text-muted-foreground">{i.org}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
@@ -331,12 +333,14 @@ function Certifications() {
     <section className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Certifications" title="Credentials & publications" />
       <div className="grid sm:grid-cols-2 gap-3">
-        {certs.map((c) => (
-          <a key={c.label} href={c.url} target="_blank" rel="noreferrer" className="group rounded-xl border border-border bg-surface px-5 py-4 text-sm flex items-center gap-3 hover:border-primary/60 transition">
+        {certs.map((c, i) => (
+          <Reveal key={c.label} delay={i * 60} className="block">
+          <a href={c.url} target="_blank" rel="noreferrer" className="group rounded-xl border border-border bg-surface px-5 py-4 text-sm flex items-center gap-3 hover:border-primary/60 transition">
             <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
             <span className="flex-1">{c.label}</span>
             <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition" />
           </a>
+          </Reveal>
         ))}
       </div>
     </section>
