@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ElementType, type ReactNode } from "react";
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" &&
@@ -8,7 +8,7 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   y?: number;
   once?: boolean;
   style?: CSSProperties;
