@@ -208,4 +208,5 @@
   .animate-fade-up, .animate-fade-in, .animate-float, .animate-blob, .animate-marquee, .text-shimmer {
     animation: none !important;
   }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
