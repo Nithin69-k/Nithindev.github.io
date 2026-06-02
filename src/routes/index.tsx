@@ -263,6 +263,11 @@ function Experience() {
                 </li>
               ))}
             </ul>
+            {e.letter ? (
+              <a href={e.letter} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
+                <ExternalLink className="w-3.5 h-3.5" /> {e.letterLabel ?? "View letter"}
+              </a>
+            ) : null}
           </div>
         ))}
       </div>
