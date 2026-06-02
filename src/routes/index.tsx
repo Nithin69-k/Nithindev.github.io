@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
+import { Reveal, useParallax } from "@/components/Reveal";
 import portrait from "@/assets/nithin-portrait.png.asset.json";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
