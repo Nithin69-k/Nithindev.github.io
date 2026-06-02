@@ -1,11 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
 import heroAi from "@/assets/hero-ai.jpg";
 import avatar from "@/assets/avatar.jpg";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
 import projParking from "@/assets/project-parking.jpg";
 import projShilpakala from "@/assets/project-shilpakala.jpg";
+import certMindmatrix from "@/assets/certs/mindmatrix.jpg.asset.json";
+import certIntellipaat from "@/assets/certs/intellipaat.jpg.asset.json";
+import certPublication from "@/assets/certs/publication.jpg.asset.json";
+import certPython from "@/assets/certs/python.jpg.asset.json";
+import certLinux from "@/assets/certs/linux.jpg.asset.json";
+import certAi from "@/assets/certs/ai.jpg.asset.json";
+import certPowerbi from "@/assets/certs/powerbi.jpg.asset.json";
+import certSql from "@/assets/certs/sql.jpg.asset.json";
+import certMssql from "@/assets/certs/mssql.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,19 +53,19 @@ const projects = [
 ];
 
 const experience = [
-  { role: "AI & Android App Development Intern", org: "MindMatrixEd", period: "Feb 2026 – Apr 2026", bullets: ["Architected Generative AI components into mobile app features.", "Streamlined model inferences across active user sessions."] },
-  { role: "Data Scientist Intern", org: "Intellipaat", period: "Sep 2025 – Feb 2026", bullets: ["Engineered transformations and trained supervised ML models (regression & classification).", "Ran exploratory analysis on industrial datasets to extract business insights."] },
+  { role: "AI & Android App Development Intern", org: "MindMatrixEd", period: "Feb 2026 – Apr 2026", bullets: ["Architected Generative AI components into mobile app features.", "Streamlined model inferences across active user sessions."], letter: certMindmatrix.url, letterLabel: "View offer letter" },
+  { role: "Data Scientist Intern", org: "Intellipaat", period: "Sep 2025 – Feb 2026", bullets: ["Engineered transformations and trained supervised ML models (regression & classification).", "Ran exploratory analysis on industrial datasets to extract business insights."], letter: certIntellipaat.url, letterLabel: "View offer letter" },
   { role: "Data Science & AI Program", org: "Intellipaat (IIT Indore)", period: "Mar 2025 – Present", bullets: ["Hands-on training in applied statistics, pipelines, evaluation, and deployment."] },
 ];
 
-const certs = [
-  "Research Paper Publication — IJCRT, Sep 2025",
-  "Power BI Course — Intellipaat",
-  "Python Certification — Intellipaat",
-  "Artificial Intelligence Course — Intellipaat",
-  "Linux Training — Intellipaat",
-  "SQL Course — Intellipaat",
-  "Microsoft SQL Certification — Intellipaat",
+const certs: { label: string; url: string }[] = [
+  { label: "Research Paper Publication — IJCRT, Sep 2025", url: certPublication.url },
+  { label: "Power BI Course — Intellipaat", url: certPowerbi.url },
+  { label: "Python Certification — Intellipaat", url: certPython.url },
+  { label: "Artificial Intelligence Course — Intellipaat", url: certAi.url },
+  { label: "Linux Training — Intellipaat", url: certLinux.url },
+  { label: "SQL Course — Intellipaat", url: certSql.url },
+  { label: "Microsoft SQL Certification — Intellipaat", url: certMssql.url },
 ];
 
 function Index() {
@@ -90,9 +99,14 @@ function Nav() {
           <a href="#experience" className="hover:text-foreground transition">Experience</a>
           <a href="#skills" className="hover:text-foreground transition">Skills</a>
         </nav>
-        <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
-          Contact <ArrowRight className="w-4 h-4" />
-        </a>
+        <div className="flex items-center gap-2">
+          <a href="/Nithin_K_Resume.pdf" download className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium hover:border-primary transition">
+            <Download className="w-4 h-4" /> Resume
+          </a>
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
+            Contact <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -120,6 +134,9 @@ function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-[var(--shadow-glow)]">
             Explore my work <ArrowRight className="w-4 h-4" />
+          </a>
+          <a href="/Nithin_K_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary border border-primary/40 px-5 py-3 text-sm font-medium hover:bg-primary/20 transition">
+            <Download className="w-4 h-4" /> Download Resume
           </a>
           <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-3 text-sm font-medium hover:bg-surface transition">
             Contact me
