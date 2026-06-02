@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
-import heroAi from "@/assets/hero-ai.jpg";
-import avatar from "@/assets/avatar.jpg";
+import portrait from "@/assets/nithin-portrait.png.asset.json";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
 import projParking from "@/assets/project-parking.jpg";
@@ -70,7 +69,7 @@ const certs: { label: string; url: string }[] = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
       <Nav />
       <Hero />
       <Services />
@@ -87,24 +86,24 @@ function Index() {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-4 z-50 px-4 animate-fade-up">
+      <div className="mx-auto max-w-6xl rounded-full bg-[var(--ink)] text-[var(--ink-foreground)] shadow-[var(--shadow-card)] px-4 sm:px-6 h-14 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 font-semibold">
-          <span className="grid place-items-center w-8 h-8 rounded-lg bg-primary text-primary-foreground text-sm">N</span>
-          <span>Nithin K</span>
+          <span className="grid place-items-center w-7 h-7 rounded-md bg-primary text-primary-foreground text-xs font-bold">N</span>
+          <span className="text-sm">Nithin K</span>
         </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          <a href="#services" className="hover:text-foreground transition">Services</a>
-          <a href="#projects" className="hover:text-foreground transition">Projects</a>
-          <a href="#experience" className="hover:text-foreground transition">Experience</a>
-          <a href="#skills" className="hover:text-foreground transition">Skills</a>
+        <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
+          <a href="#services" className="hover:text-primary transition">Services</a>
+          <a href="#projects" className="hover:text-primary transition">Projects</a>
+          <a href="#experience" className="hover:text-primary transition">Experience</a>
+          <a href="#skills" className="hover:text-primary transition">Skills</a>
         </nav>
         <div className="flex items-center gap-2">
-          <a href="/Nithin_K_Resume.pdf" download className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium hover:border-primary transition">
-            <Download className="w-4 h-4" /> Resume
+          <a href="/Nithin_K_Resume.pdf" download className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white px-3.5 py-1.5 text-xs font-medium transition">
+            <Download className="w-3.5 h-3.5" /> Resume
           </a>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
-            Contact <ArrowRight className="w-4 h-4" />
+          <a href="#contact" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.78_0.18_70/0.6)]">
+            Contact
           </a>
         </div>
       </div>
@@ -115,35 +114,40 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
+      {/* Soft hero gradient + animated yellow blob */}
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
-      <img src={heroAi} alt="" width={1280} height={896} className="absolute inset-0 -z-10 w-full h-full object-cover opacity-20" />
-      <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground mb-8">
+      <div aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl animate-blob -z-10" />
+      <div aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl animate-blob delay-300 -z-10" />
+
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-3 py-1 text-xs text-muted-foreground mb-8 animate-fade-up">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" /> Available for opportunities
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">
-          Nithin K{" "}
-          <img src={avatar} alt="Nithin K" width={64} height={64} className="inline-block w-14 h-14 md:w-16 md:h-16 rounded-full align-middle ring-2 ring-primary mx-2" />
-          <span className="block text-muted-foreground mt-2">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] animate-fade-up delay-100">
+          <span className="text-shimmer">Nithin K</span>{" "}
+          <img src={portrait.url} alt="Nithin K" width={88} height={88} className="inline-block w-14 h-14 md:w-20 md:h-20 rounded-full align-middle ring-4 ring-primary/60 object-cover mx-2 animate-float shadow-[var(--shadow-glow)]" />{" "}
+          <span className="text-muted-foreground">—</span>
+          <span className="block mt-2">
             AI Engineer & <span className="text-primary">Data Scientist</span>
           </span>
         </h1>
-        <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground">
+        <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground animate-fade-up delay-200">
           Bridging data science theory and software engineering practice — building production-ready ML pipelines and integrating Generative AI into real applications.
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-3">
-          <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-[var(--shadow-glow)]">
-            Explore my work <ArrowRight className="w-4 h-4" />
+        <div className="mt-10 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
+          <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] text-white px-5 py-3 text-sm font-medium hover:bg-[var(--ink)]/90 transition">
+            <span className="grid place-items-center w-6 h-6 rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowRight className="w-3.5 h-3.5" /></span>
+            Explore my work
           </a>
-          <a href="/Nithin_K_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary border border-primary/40 px-5 py-3 text-sm font-medium hover:bg-primary/20 transition">
+          <a href="/Nithin_K_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
             <Download className="w-4 h-4" /> Download Resume
           </a>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-3 text-sm font-medium hover:bg-surface transition">
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary transition">
             Contact me
           </a>
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center gap-3 text-sm">
+        <div className="mt-14 flex flex-wrap items-center gap-3 text-sm animate-fade-up delay-500">
           <span className="text-muted-foreground mr-2">Follow Nithin online —</span>
           <SocialPill href="https://github.com/" icon={Github} label="GitHub" />
           <SocialPill href="https://linkedin.com/" icon={Linkedin} label="LinkedIn" />
@@ -151,22 +155,24 @@ function Hero() {
         </div>
       </div>
 
+      {/* Dark vision/mission band like reference */}
       <div className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="rounded-3xl border border-border bg-surface p-8 md:p-10 shadow-[var(--shadow-card)]">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="rounded-3xl bg-[var(--ink)] text-[var(--ink-foreground)] p-8 md:p-12 shadow-[var(--shadow-card)] relative overflow-hidden animate-fade-up">
+          <div aria-hidden className="absolute -top-10 -right-10 text-[160px] font-black tracking-tighter text-white/5 select-none leading-none">NITHIN</div>
+          <div className="grid md:grid-cols-2 gap-10 relative">
             <div>
               <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-primary" /> Vision
+                <Sparkles className="w-4 h-4 text-primary" /> Nithin's Vision
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-white/70 leading-relaxed">
                 A versatile generalist building intelligent systems — from rigorous data analysis to deployed Generative AI features that ship real value.
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                <Brain className="w-4 h-4 text-primary" /> Mission
+                <Brain className="w-4 h-4 text-primary" /> Nithin's Mission
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-white/70 leading-relaxed">
                 Backed by IIT Indore's 16-month applied Data Science & AI certification, I focus on production-grade ML and seamless LLM integration.
               </p>
             </div>
@@ -199,8 +205,8 @@ function Services() {
     <section id="services" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="What I do" title="Core capabilities & services" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map((s) => (
-          <div key={s.title} className="group rounded-2xl border border-border bg-surface p-6 hover:border-primary/50 hover:bg-surface-elevated transition">
+        {services.map((s, i) => (
+          <div key={s.title} style={{ animationDelay: `${i * 80}ms` }} className="group rounded-2xl border border-border bg-card p-6 hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="w-10 h-10 grid place-items-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition">
               <s.icon className="w-5 h-5" />
             </div>
@@ -223,8 +229,8 @@ function Projects() {
         </div>
       </div>
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((p) => (
-          <a key={p.title} href={p.link} className="group rounded-2xl border border-border bg-surface overflow-hidden hover:border-primary/50 transition">
+        {projects.map((p, i) => (
+          <a key={p.title} href={p.link} style={{ animationDelay: `${i * 100}ms` }} className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="aspect-[4/3] overflow-hidden bg-muted">
               <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
@@ -248,8 +254,8 @@ function Experience() {
     <section id="experience" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Experience" title="Work history" />
       <div className="space-y-4">
-        {experience.map((e) => (
-          <div key={e.role} className="rounded-2xl border border-border bg-surface p-6 md:p-8 hover:border-primary/50 transition">
+        {experience.map((e, i) => (
+          <div key={e.role} style={{ animationDelay: `${i * 100}ms` }} className="rounded-2xl border border-border bg-card p-6 md:p-8 hover-lift hover:border-primary/60 transition animate-fade-up">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
               <h3 className="font-semibold text-lg">{e.role}</h3>
               <span className="text-xs text-primary font-mono">{e.period}</span>
@@ -281,11 +287,11 @@ function SkillsSection() {
       <SectionHeader tag="Technical Inventory" title="Skills & tools" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Object.entries(skills).map(([cat, list]) => (
-          <div key={cat} className="rounded-2xl border border-border bg-surface p-6">
+          <div key={cat} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <h3 className="text-sm font-semibold text-primary mb-4">{cat}</h3>
             <div className="flex flex-wrap gap-2">
               {list.map((s) => (
-                <span key={s} className="rounded-full border border-border bg-background px-3 py-1 text-xs">{s}</span>
+                <span key={s} className="rounded-full border border-border bg-background px-3 py-1 text-xs hover:border-primary hover:text-primary transition">{s}</span>
               ))}
             </div>
           </div>
@@ -306,7 +312,7 @@ function Education() {
       <SectionHeader tag="Education" title="Academic background" />
       <div className="grid md:grid-cols-3 gap-4">
         {items.map((i) => (
-          <div key={i.title} className="rounded-2xl border border-border bg-surface p-6">
+          <div key={i.title} className="rounded-2xl border border-border bg-card p-6 hover-lift transition">
             <p className="text-xs text-primary font-mono mb-3">{i.period}</p>
             <h3 className="font-semibold mb-1">{i.title}</h3>
             <p className="text-sm text-muted-foreground">{i.org}</p>
@@ -337,17 +343,17 @@ function Certifications() {
 function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="rounded-3xl border border-border bg-surface p-8 md:p-14 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-60" style={{ background: "var(--gradient-hero)" }} />
+      <div className="rounded-3xl bg-[var(--ink)] text-[var(--ink-foreground)] p-8 md:p-14 relative overflow-hidden shadow-[var(--shadow-card)]">
+        <div aria-hidden className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-primary/25 blur-3xl animate-blob -z-0" />
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ready to build something intelligent?</h2>
-            <p className="mt-4 text-muted-foreground">Whether it's a predictive model, a GenAI feature, or a full data pipeline — let's talk.</p>
-            <a href="mailto:nithingowda490@gmail.com" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-[var(--shadow-glow)]">
+          <div className="relative">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ready to build something <span className="text-primary">intelligent?</span></h2>
+            <p className="mt-4 text-white/70">Whether it's a predictive model, a GenAI feature, or a full data pipeline — let's talk.</p>
+            <a href="mailto:nithingowda490@gmail.com" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition shadow-[var(--shadow-glow)]">
               <Mail className="w-4 h-4" /> Contact Nithin
             </a>
           </div>
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm relative">
             <ContactRow icon={Mail} label="nithingowda490@gmail.com" href="mailto:nithingowda490@gmail.com" />
             <ContactRow icon={Phone} label="+91 8217264796" href="tel:+918217264796" />
             <ContactRow icon={MapPin} label="Bengaluru, Karnataka, India" />
@@ -362,8 +368,8 @@ function Contact() {
 
 function ContactRow({ icon: Icon, label, href }: { icon: typeof Mail; label: string; href?: string }) {
   const inner = (
-    <div className="flex items-center gap-3 rounded-xl border border-border bg-background/50 px-4 py-3 hover:border-primary/50 transition">
-      <span className="grid place-items-center w-9 h-9 rounded-lg bg-primary/10 text-primary"><Icon className="w-4 h-4" /></span>
+    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur px-4 py-3 hover:border-primary/60 hover:bg-white/10 transition">
+      <span className="grid place-items-center w-9 h-9 rounded-lg bg-primary/20 text-primary"><Icon className="w-4 h-4" /></span>
       <span>{label}</span>
     </div>
   );
