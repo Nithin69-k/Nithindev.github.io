@@ -57,9 +57,8 @@ export function Reveal({
   };
 
   return (
-    // @ts-expect-error dynamic tag with ref
     <Tag
-      ref={ref}
+      ref={ref as never}
       style={merged}
       className={`reveal ${visible ? "is-visible" : ""} ${className}`}
     >
