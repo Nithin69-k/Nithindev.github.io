@@ -23,6 +23,44 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Portfolio of Nithin K — AI Engineer, Data Scientist, and Software Developer building production ML pipelines and Generative AI solutions." },
       { property: "og:title", content: "Nithin K — AI Engineer & Data Scientist" },
       { property: "og:description", content: "Production ML pipelines, Generative AI integrations, and full-stack software craftsmanship." },
+      { property: "og:url", content: "https://nithingowda.lovable.app/" },
+      { property: "og:image", content: `https://nithingowda.lovable.app${portrait.url}` },
+      { property: "twitter:image", content: `https://nithingowda.lovable.app${portrait.url}` },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nithingowda.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Nithin K",
+          jobTitle: "AI Engineer & Data Scientist",
+          email: "mailto:nithingowda490@gmail.com",
+          telephone: "+91-8217264796",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Bengaluru",
+            addressRegion: "Karnataka",
+            addressCountry: "IN",
+          },
+          url: "https://nithingowda.lovable.app/",
+          sameAs: [
+            "https://github.com/Nithin69-k",
+            "https://linkedin.com/",
+          ],
+          knowsAbout: [
+            "Machine Learning",
+            "Deep Learning",
+            "Generative AI",
+            "Data Science",
+            "Python",
+            "Power BI",
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -184,17 +222,17 @@ function Hero() {
           <div aria-hidden className="absolute -top-10 -right-10 text-[160px] font-black tracking-tighter text-white/5 select-none leading-none">NITHIN</div>
           <div className="grid md:grid-cols-2 gap-10 relative">
             <div>
-              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+              <h2 className="text-lg font-semibold mb-2 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" /> Nithin's Vision
-              </h3>
+              </h2>
               <p className="text-sm text-white/70 leading-relaxed">
                 A versatile generalist building intelligent systems — from rigorous data analysis to deployed Generative AI features that ship real value.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+              <h2 className="text-lg font-semibold mb-2 flex items-center gap-2">
                 <Brain className="w-4 h-4 text-primary" /> Nithin's Mission
-              </h3>
+              </h2>
               <p className="text-sm text-white/70 leading-relaxed">
                 Backed by IIT Indore's 16-month applied Data Science & AI certification, I focus on production-grade ML and seamless LLM integration.
               </p>
@@ -256,7 +294,7 @@ function Projects() {
           <Reveal key={p.title} delay={i * 100} className="block">
             <a href={p.link} target="_blank" rel="noreferrer" className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block">
             <div className="aspect-[4/3] overflow-hidden bg-muted">
-              <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <img src={p.img} alt={`${p.title} — project preview`} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
             <div className="p-6">
               <div className="flex items-start justify-between gap-4">
@@ -409,9 +447,9 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Nithin K. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <a href="https://github.com/Nithin69-k" target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
-          <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
+          <a href="https://github.com/Nithin69-k" target="_blank" rel="noreferrer" aria-label="Nithin K on GitHub" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="Nithin K on LinkedIn" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Nithin K on Instagram" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
         </div>
       </div>
     </footer>
