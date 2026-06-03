@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nithingowda.lovable.app/sitemap.xml
