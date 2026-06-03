@@ -254,7 +254,7 @@ function Projects() {
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 100} className="block">
-            <a href={p.link} className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block">
+            <a href={p.link} target="_blank" rel="noreferrer" className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block">
             <div className="aspect-[4/3] overflow-hidden bg-muted">
               <img src={p.img} alt={p.title} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
