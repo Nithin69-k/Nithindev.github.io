@@ -100,7 +100,7 @@ function Nav() {
           <a href="#skills" className="hover:text-primary transition">Skills</a>
         </nav>
         <div className="flex items-center gap-2">
-          <a href="/Nithin_K_Resume.pdf" download className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white px-3.5 py-1.5 text-xs font-medium transition">
+          <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white px-3.5 py-1.5 text-xs font-medium transition">
             <Download className="w-3.5 h-3.5" /> Resume
           </a>
           <a href="#contact" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.78_0.18_70/0.6)]">
@@ -122,32 +122,52 @@ function Hero() {
       <div ref={blob1} aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl animate-blob -z-10 will-change-transform" />
       <div ref={blob2} aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl animate-blob delay-300 -z-10 will-change-transform" />
 
-      <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-3 py-1 text-xs text-muted-foreground mb-8 animate-fade-up">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" /> Available for opportunities
-        </div>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] animate-fade-up delay-100">
-          <span className="text-shimmer">Nithin K</span>{" "}
-          <img src={portrait.url} alt="Nithin K" width={88} height={88} className="inline-block w-14 h-14 md:w-20 md:h-20 rounded-full align-middle ring-4 ring-primary/60 object-cover mx-2 animate-float shadow-[var(--shadow-glow)]" />{" "}
-          <span className="text-muted-foreground">—</span>
-          <span className="block mt-2">
-            AI Engineer & <span className="text-primary">Data Scientist</span>
-          </span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground animate-fade-up delay-200">
-          Bridging data science theory and software engineering practice — building production-ready ML pipelines and integrating Generative AI into real applications.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
-          <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] text-white px-5 py-3 text-sm font-medium hover:bg-[var(--ink)]/90 transition">
-            <span className="grid place-items-center w-6 h-6 rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowRight className="w-3.5 h-3.5" /></span>
-            Explore my work
-          </a>
-          <a href="/Nithin_K_Resume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
-            <Download className="w-4 h-4" /> Download Resume
-          </a>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary transition">
-            Contact me
-          </a>
+      <div className="mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+        <div className="grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 backdrop-blur px-3 py-1 text-xs text-muted-foreground mb-6 animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" /> Available for opportunities
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] animate-fade-up delay-100">
+              <span className="text-shimmer">Nithin K</span>
+              <span className="block mt-2">
+                AI Engineer & <span className="text-primary">Data Scientist</span>
+              </span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base md:text-lg text-muted-foreground animate-fade-up delay-200">
+              Bridging data science theory and software engineering practice — building production-ready ML pipelines and integrating Generative AI into real applications.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
+              <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] text-white px-5 py-3 text-sm font-medium hover:bg-[var(--ink)]/90 transition">
+                <span className="grid place-items-center w-6 h-6 rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowRight className="w-3.5 h-3.5" /></span>
+                Explore my work
+              </a>
+              <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
+                <Download className="w-4 h-4" /> Open Resume
+              </a>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary transition">
+                Contact me
+              </a>
+            </div>
+          </div>
+
+          {/* Portrait — top-right empty space */}
+          <div className="relative flex justify-center md:justify-end animate-fade-up delay-200">
+            <div className="relative">
+              <div aria-hidden className="absolute -inset-6 rounded-full bg-primary/30 blur-2xl animate-blob" />
+              <div aria-hidden className="absolute -inset-2 rounded-full bg-gradient-to-tr from-primary via-primary/40 to-transparent animate-spin-slow" />
+              <img
+                src={portrait.url}
+                alt="Nithin K"
+                width={420}
+                height={420}
+                className="relative w-56 h-56 md:w-80 md:h-80 rounded-full object-cover ring-4 ring-white shadow-[var(--shadow-glow)] animate-float"
+              />
+              <div className="absolute -bottom-3 -left-3 rounded-full bg-[var(--ink)] text-white text-[10px] uppercase tracking-widest px-3 py-1.5 shadow-lg animate-fade-up delay-500">
+                AI · ML · GenAI
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-14 flex flex-wrap items-center gap-3 text-sm animate-fade-up delay-500">
