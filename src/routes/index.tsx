@@ -172,7 +172,7 @@ function Hero() {
 
         <div className="mt-14 flex flex-wrap items-center gap-3 text-sm animate-fade-up delay-500">
           <span className="text-muted-foreground mr-2">Follow Nithin online —</span>
-          <SocialPill href="https://github.com/" icon={Github} label="GitHub" />
+          <SocialPill href="https://github.com/Nithin69-k" icon={Github} label="GitHub" />
           <SocialPill href="https://linkedin.com/" icon={Linkedin} label="LinkedIn" />
           <SocialPill href="https://instagram.com/" icon={Instagram} label="Instagram" />
         </div>
@@ -385,7 +385,7 @@ function Contact() {
             <ContactRow icon={Phone} label="+91 8217264796" href="tel:+918217264796" />
             <ContactRow icon={MapPin} label="Bengaluru, Karnataka, India" />
             <ContactRow icon={Linkedin} label="LinkedIn Profile" href="https://linkedin.com/" />
-            <ContactRow icon={Github} label="GitHub Repository" href="https://github.com/" />
+            <ContactRow icon={Github} label="GitHub Repository" href="https://github.com/Nithin69-k" />
           </div>
         </div>
       </div>
@@ -409,7 +409,7 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Nithin K. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
+          <a href="https://github.com/Nithin69-k" target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
           <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
           <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
         </div>
