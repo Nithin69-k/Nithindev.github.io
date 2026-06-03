@@ -46,10 +46,10 @@ const skills = {
 };
 
 const projects = [
-  { img: projChurn, title: "Telecom Customer Churn Prediction", tech: "Python · Scikit-learn · XGBoost · Random Forest", desc: "End-to-end framework with EDA and advanced classification to identify high-risk customers and enable retention.", link: "https://github.com/search?q=telecom+customer+churn+prediction+nithin&type=repositories" },
-  { img: projMovie, title: "Movie Recommendation System", tech: "Python · Surprise · SVD · Collaborative Filtering", desc: "Personalized content predictor using Singular Value Decomposition for distinct user profiles.", link: "https://github.com/search?q=movie+recommendation+system+nithin&type=repositories" },
-  { img: projParking, title: "Parking Space Management System", tech: "Python · SQL · Streamlit", desc: "Real-time slot allocation with persistence and historical analytics — supported by a peer-reviewed publication.", link: "https://github.com/search?q=parking+space+management+system+nithin&type=repositories" },
-  { img: projShilpakala, title: "Shilpakala", tech: "HTML5 · CSS3 · JavaScript", desc: "Online visual gallery highlighting cultural heritage artwork and digital collections.", link: "https://github.com/search?q=shilpakala+nithin&type=repositories" },
+  { img: projChurn, title: "Telecom Customer Churn Prediction", tech: "Python · Scikit-learn · XGBoost · Random Forest", desc: "End-to-end framework with EDA and advanced classification to identify high-risk customers and enable retention.", link: "https://github.com/Nithin69-k/Telecom-Customer-Churn-Prediction-" },
+  { img: projMovie, title: "Movie Recommendation System", tech: "Python · Surprise · SVD · Collaborative Filtering", desc: "Personalized content predictor using Singular Value Decomposition for distinct user profiles.", link: "https://github.com/Nithin69-k/Movie-Recommendation-System" },
+  { img: projParking, title: "Parking Space Management System", tech: "Python · SQL · Streamlit", desc: "Real-time slot allocation with persistence and historical analytics — supported by a peer-reviewed publication.", link: "https://github.com/Nithin69-k/Parking-Space-Management-System" },
+  { img: projShilpakala, title: "Shilpakala", tech: "HTML5 · CSS3 · JavaScript", desc: "Online visual gallery highlighting cultural heritage artwork and digital collections.", link: "https://github.com/Nithin69-k/Shilpa-Kala" },
 ];
 
 const experience = [
