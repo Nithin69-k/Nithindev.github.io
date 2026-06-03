@@ -46,10 +46,10 @@ const skills = {
 };
 
 const projects = [
-  { img: projChurn, title: "Telecom Customer Churn Prediction", tech: "Python · Scikit-learn · XGBoost · Random Forest", desc: "End-to-end framework with EDA and advanced classification to identify high-risk customers and enable retention.", link: "https://github.com/search?q=telecom+customer+churn+prediction+nithin&type=repositories" },
-  { img: projMovie, title: "Movie Recommendation System", tech: "Python · Surprise · SVD · Collaborative Filtering", desc: "Personalized content predictor using Singular Value Decomposition for distinct user profiles.", link: "https://github.com/search?q=movie+recommendation+system+nithin&type=repositories" },
-  { img: projParking, title: "Parking Space Management System", tech: "Python · SQL · Streamlit", desc: "Real-time slot allocation with persistence and historical analytics — supported by a peer-reviewed publication.", link: "https://github.com/search?q=parking+space+management+system+nithin&type=repositories" },
-  { img: projShilpakala, title: "Shilpakala", tech: "HTML5 · CSS3 · JavaScript", desc: "Online visual gallery highlighting cultural heritage artwork and digital collections.", link: "https://github.com/search?q=shilpakala+nithin&type=repositories" },
+  { img: projChurn, title: "Telecom Customer Churn Prediction", tech: "Python · Scikit-learn · XGBoost · Random Forest", desc: "End-to-end framework with EDA and advanced classification to identify high-risk customers and enable retention.", link: "https://github.com/Nithin69-k/Telecom-Customer-Churn-Prediction-" },
+  { img: projMovie, title: "Movie Recommendation System", tech: "Python · Surprise · SVD · Collaborative Filtering", desc: "Personalized content predictor using Singular Value Decomposition for distinct user profiles.", link: "https://github.com/Nithin69-k/Movie-Recommendation-System" },
+  { img: projParking, title: "Parking Space Management System", tech: "Python · SQL · Streamlit", desc: "Real-time slot allocation with persistence and historical analytics — supported by a peer-reviewed publication.", link: "https://github.com/Nithin69-k/Parking-Space-Management-System" },
+  { img: projShilpakala, title: "Shilpakala", tech: "HTML5 · CSS3 · JavaScript", desc: "Online visual gallery highlighting cultural heritage artwork and digital collections.", link: "https://github.com/Nithin69-k/Shilpa-Kala" },
 ];
 
 const experience = [
@@ -172,7 +172,7 @@ function Hero() {
 
         <div className="mt-14 flex flex-wrap items-center gap-3 text-sm animate-fade-up delay-500">
           <span className="text-muted-foreground mr-2">Follow Nithin online —</span>
-          <SocialPill href="https://github.com/" icon={Github} label="GitHub" />
+          <SocialPill href="https://github.com/Nithin69-k" icon={Github} label="GitHub" />
           <SocialPill href="https://linkedin.com/" icon={Linkedin} label="LinkedIn" />
           <SocialPill href="https://instagram.com/" icon={Instagram} label="Instagram" />
         </div>
@@ -385,7 +385,7 @@ function Contact() {
             <ContactRow icon={Phone} label="+91 8217264796" href="tel:+918217264796" />
             <ContactRow icon={MapPin} label="Bengaluru, Karnataka, India" />
             <ContactRow icon={Linkedin} label="LinkedIn Profile" href="https://linkedin.com/" />
-            <ContactRow icon={Github} label="GitHub Repository" href="https://github.com/" />
+            <ContactRow icon={Github} label="GitHub Repository" href="https://github.com/Nithin69-k" />
           </div>
         </div>
       </div>
@@ -409,7 +409,7 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© {new Date().getFullYear()} Nithin K. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
+          <a href="https://github.com/Nithin69-k" target="_blank" rel="noreferrer" className="hover:text-foreground"><Github className="w-4 h-4" /></a>
           <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
           <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="hover:text-foreground"><Instagram className="w-4 h-4" /></a>
         </div>
