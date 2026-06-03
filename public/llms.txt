@@ -1,0 +1,11 @@
+# Nithin K — AI Engineer Portfolio
+
+> Portfolio of Nithin K, an AI Engineer, Data Scientist, and Software Developer based in Bengaluru, India. Showcases projects in machine learning, GenAI, data science, and full-stack development.
+
+## Pages
+
+- [Home](/): Hero, services, projects, experience, skills, education, and certifications.
+
+## Optional
+
+- [Resume PDF](/Nithin_K_Resume.pdf): Downloadable resume.
