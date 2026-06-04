@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
 import { Reveal, useParallax } from "@/components/Reveal";
+import { ScrollProgress, CursorGlow, Magnetic, Tilt, CountUp, Aurora, Particles } from "@/components/Effects";
 import portrait from "@/assets/nithin-portrait.png.asset.json";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
@@ -108,8 +109,11 @@ const certs: { label: string; url: string }[] = [
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
+      <ScrollProgress />
+      <CursorGlow />
       <Nav />
       <Hero />
+      <Stats />
       <Services />
       <Projects />
       <Experience />
@@ -125,24 +129,26 @@ function Index() {
 function Nav() {
   return (
     <header className="sticky top-4 z-50 px-4 animate-fade-up">
-      <div className="mx-auto max-w-6xl rounded-full bg-[var(--ink)] text-[var(--ink-foreground)] shadow-[var(--shadow-card)] px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl rounded-full glass-dark text-[var(--ink-foreground)] shadow-[var(--shadow-card)] px-4 sm:px-6 h-14 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 font-semibold">
           <span className="grid place-items-center w-7 h-7 rounded-md bg-primary text-primary-foreground text-xs font-bold">N</span>
           <span className="text-sm">Nithin K</span>
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
-          <a href="#services" className="hover:text-primary transition">Services</a>
-          <a href="#projects" className="hover:text-primary transition">Projects</a>
-          <a href="#experience" className="hover:text-primary transition">Experience</a>
-          <a href="#skills" className="hover:text-primary transition">Skills</a>
+          <a href="#services" className="story-link hover:text-primary transition">Services</a>
+          <a href="#projects" className="story-link hover:text-primary transition">Projects</a>
+          <a href="#experience" className="story-link hover:text-primary transition">Experience</a>
+          <a href="#skills" className="story-link hover:text-primary transition">Skills</a>
         </nav>
         <div className="flex items-center gap-2">
           <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white px-3.5 py-1.5 text-xs font-medium transition">
             <Download className="w-3.5 h-3.5" /> Resume
           </a>
-          <a href="#contact" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.78_0.18_70/0.6)]">
-            Contact
-          </a>
+          <Magnetic strength={0.3}>
+            <a href="#contact" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.78_0.18_70/0.6)]">
+              Contact
+            </a>
+          </Magnetic>
         </div>
       </div>
     </header>
@@ -154,10 +160,13 @@ function Hero() {
   const blob2 = useParallax<HTMLDivElement>(-0.08);
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Soft hero gradient + animated yellow blob */}
-      <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
-      <div ref={blob1} aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl animate-blob -z-10 will-change-transform" />
-      <div ref={blob2} aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl animate-blob delay-300 -z-10 will-change-transform" />
+      {/* Aurora mesh gradient + parallax blobs + particles */}
+      <div className="absolute inset-0 -z-10">
+        <Aurora />
+      </div>
+      <div ref={blob1} aria-hidden className="absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-primary/30 blur-3xl -z-10 will-change-transform" />
+      <div ref={blob2} aria-hidden className="absolute top-40 right-0 w-[360px] h-[360px] rounded-full bg-primary/20 blur-3xl -z-10 will-change-transform" />
+      <Particles count={20} />
 
       <div className="mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-16 md:pb-28">
         <div className="grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-12 items-center">
@@ -175,14 +184,18 @@ function Hero() {
               Bridging data science theory and software engineering practice — building production-ready ML pipelines and integrating Generative AI into real applications.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up delay-300">
-              <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] text-white px-5 py-3 text-sm font-medium hover:bg-[var(--ink)]/90 transition">
-                <span className="grid place-items-center w-6 h-6 rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowRight className="w-3.5 h-3.5" /></span>
-                Explore my work
-              </a>
-              <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
-                <Download className="w-4 h-4" /> Open Resume
-              </a>
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-5 py-3 text-sm font-medium hover:border-primary transition">
+              <Magnetic>
+                <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-[var(--ink)] text-white px-5 py-3 text-sm font-medium hover:bg-[var(--ink)]/90 transition">
+                  <span className="grid place-items-center w-6 h-6 rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowRight className="w-3.5 h-3.5" /></span>
+                  Explore my work
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
+                  <Download className="w-4 h-4" /> Open Resume
+                </a>
+              </Magnetic>
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium hover:border-primary transition">
                 Contact me
               </a>
             </div>
@@ -251,6 +264,29 @@ function SocialPill({ href, icon: Icon, label }: { href: string; icon: typeof Gi
   );
 }
 
+function Stats() {
+  const items = [
+    { value: 8, suffix: "+", label: "Shipped Projects" },
+    { value: 9, suffix: "+", label: "Certifications" },
+    { value: 2, suffix: "", label: "Industry Internships" },
+    { value: 16, suffix: " mo", label: "IIT Indore AI Track" },
+  ];
+  return (
+    <section className="mx-auto max-w-6xl px-6 -mt-6 mb-14">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {items.map((s, i) => (
+          <Reveal key={s.label} delay={i * 80} className="glass rounded-2xl px-5 py-6 text-center hover-lift">
+            <div className="text-3xl md:text-4xl font-bold tracking-tight">
+              <CountUp to={s.value} suffix={s.suffix} className="bg-gradient-to-br from-foreground to-[oklch(0.45_0.04_70)] bg-clip-text text-transparent" />
+            </div>
+            <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.label}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SectionHeader({ tag, title }: { tag: string; title: string }) {
   return (
     <div className="mb-10">
@@ -291,19 +327,22 @@ function Projects() {
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 100} className="block">
-            <a href={p.link} target="_blank" rel="noreferrer" className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block">
-            <div className="aspect-[4/3] overflow-hidden bg-muted">
-              <img src={p.img} alt={`${p.title} — project preview`} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="font-semibold text-lg">{p.title}</h3>
-                <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground shrink-0 group-hover:rotate-45 transition"><ExternalLink className="w-4 h-4" /></span>
-              </div>
-              <p className="text-xs text-primary mt-2 font-mono">{p.tech}</p>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.desc}</p>
-            </div>
-            </a>
+            <Tilt className="rounded-2xl">
+              <a href={p.link} target="_blank" rel="noreferrer" className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/60 transition block shadow-[var(--shadow-card)]">
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img src={p.img} alt={`${p.title} — project preview`} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-semibold text-lg">{p.title}</h3>
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground shrink-0 group-hover:rotate-45 transition"><ExternalLink className="w-4 h-4" /></span>
+                  </div>
+                  <p className="text-xs text-primary mt-2 font-mono">{p.tech}</p>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.desc}</p>
+                </div>
+                <span className="tilt-glow" />
+              </a>
+            </Tilt>
           </Reveal>
         ))}
       </div>
