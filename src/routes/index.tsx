@@ -93,7 +93,6 @@ const projects = [
 const experience = [
   { role: "AI & Android App Development Intern", org: "MindMatrixEd", period: "Feb 2026 – Apr 2026", bullets: ["Architected Generative AI components into mobile app features.", "Streamlined model inferences across active user sessions."], letter: certMindmatrix.url, letterLabel: "View offer letter" },
   { role: "Data Scientist Intern", org: "Intellipaat", period: "Sep 2025 – Feb 2026", bullets: ["Engineered transformations and trained supervised ML models (regression & classification).", "Ran exploratory analysis on industrial datasets to extract business insights."], letter: certIntellipaat.url, letterLabel: "View offer letter" },
-  { role: "Data Science & AI Program", org: "Intellipaat (IIT Indore)", period: "Mar 2025 – Present", bullets: ["Hands-on training in applied statistics, pipelines, evaluation, and deployment."] },
 ];
 
 const certs: { label: string; url: string }[] = [
