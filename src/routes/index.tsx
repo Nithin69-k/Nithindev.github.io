@@ -264,6 +264,29 @@ function SocialPill({ href, icon: Icon, label }: { href: string; icon: typeof Gi
   );
 }
 
+function Stats() {
+  const items = [
+    { value: 8, suffix: "+", label: "Shipped Projects" },
+    { value: 9, suffix: "+", label: "Certifications" },
+    { value: 2, suffix: "", label: "Industry Internships" },
+    { value: 16, suffix: " mo", label: "IIT Indore AI Track" },
+  ];
+  return (
+    <section className="mx-auto max-w-6xl px-6 -mt-6 mb-14">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {items.map((s, i) => (
+          <Reveal key={s.label} delay={i * 80} className="glass rounded-2xl px-5 py-6 text-center hover-lift">
+            <div className="text-3xl md:text-4xl font-bold tracking-tight">
+              <CountUp to={s.value} suffix={s.suffix} className="bg-gradient-to-br from-foreground to-[oklch(0.45_0.04_70)] bg-clip-text text-transparent" />
+            </div>
+            <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.label}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SectionHeader({ tag, title }: { tag: string; title: string }) {
   return (
     <div className="mb-10">
@@ -304,19 +327,22 @@ function Projects() {
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 100} className="block">
-            <a href={p.link} target="_blank" rel="noreferrer" className="group rounded-2xl border border-border bg-card overflow-hidden hover-lift hover:border-primary/60 transition block">
-            <div className="aspect-[4/3] overflow-hidden bg-muted">
-              <img src={p.img} alt={`${p.title} — project preview`} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="font-semibold text-lg">{p.title}</h3>
-                <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground shrink-0 group-hover:rotate-45 transition"><ExternalLink className="w-4 h-4" /></span>
-              </div>
-              <p className="text-xs text-primary mt-2 font-mono">{p.tech}</p>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.desc}</p>
-            </div>
-            </a>
+            <Tilt className="rounded-2xl">
+              <a href={p.link} target="_blank" rel="noreferrer" className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/60 transition block shadow-[var(--shadow-card)]">
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img src={p.img} alt={`${p.title} — project preview`} width={800} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-semibold text-lg">{p.title}</h3>
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground shrink-0 group-hover:rotate-45 transition"><ExternalLink className="w-4 h-4" /></span>
+                  </div>
+                  <p className="text-xs text-primary mt-2 font-mono">{p.tech}</p>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{p.desc}</p>
+                </div>
+                <span className="tilt-glow" />
+              </a>
+            </Tilt>
           </Reveal>
         ))}
       </div>
