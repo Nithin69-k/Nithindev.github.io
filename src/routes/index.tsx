@@ -136,13 +136,12 @@ function Nav() {
           <span className="text-sm">Nithin K</span>
         </a>
         <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
-          <a href="#services" className="story-link hover:text-primary transition">Services</a>
           <a href="#projects" className="story-link hover:text-primary transition">Projects</a>
           <a href="#experience" className="story-link hover:text-primary transition">Experience</a>
           <a href="#skills" className="story-link hover:text-primary transition">Skills</a>
           <a href="#education" className="story-link hover:text-primary transition">Education</a>
           <a href="#certifications" className="story-link hover:text-primary transition">Certifications</a>
-          <a href="#contact" className="story-link hover:text-primary transition">Contact</a>
+          <a href="#services" className="story-link hover:text-primary transition">Services</a>
         </nav>
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-flex">
