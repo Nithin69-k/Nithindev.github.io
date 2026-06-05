@@ -267,7 +267,7 @@ function SocialPill({ href, icon: Icon, label }: { href: string; icon: typeof Gi
 
 function Stats() {
   const items = [
-    { value: 8, suffix: "+", label: "Shipped Projects" },
+    { value: 5, suffix: "+", label: "Projects Done" },
     { value: 9, suffix: "+", label: "Certifications" },
     { value: 2, suffix: "", label: "Industry Internships" },
     { value: 16, suffix: " mo", label: "IIT Indore AI Track" },
