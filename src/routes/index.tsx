@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database } from "lucide-react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { ScrollProgress, CursorGlow, Magnetic, Tilt, CountUp, Aurora, Particles } from "@/components/Effects";
 import { ResumeDownload } from "@/components/ResumeDownload";
