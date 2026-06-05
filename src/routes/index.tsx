@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Download } from "lucide-react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { ScrollProgress, CursorGlow, Magnetic, Tilt, CountUp, Aurora, Particles } from "@/components/Effects";
+import { ResumeDownload } from "@/components/ResumeDownload";
 import portrait from "@/assets/nithin-portrait.png.asset.json";
 import projChurn from "@/assets/project-churn.jpg";
 import projMovie from "@/assets/project-movie.jpg";
@@ -139,11 +140,14 @@ function Nav() {
           <a href="#projects" className="story-link hover:text-primary transition">Projects</a>
           <a href="#experience" className="story-link hover:text-primary transition">Experience</a>
           <a href="#skills" className="story-link hover:text-primary transition">Skills</a>
+          <a href="#education" className="story-link hover:text-primary transition">Education</a>
+          <a href="#certifications" className="story-link hover:text-primary transition">Certifications</a>
+          <a href="#contact" className="story-link hover:text-primary transition">Contact</a>
         </nav>
         <div className="flex items-center gap-2">
-          <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 text-white px-3.5 py-1.5 text-xs font-medium transition">
-            <Download className="w-3.5 h-3.5" /> Resume
-          </a>
+          <span className="hidden sm:inline-flex">
+            <ResumeDownload variant="pill" label="Resume" />
+          </span>
           <Magnetic strength={0.3}>
             <a href="#contact" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 transition shadow-[0_8px_24px_-8px_oklch(0.78_0.18_70/0.6)]">
               Contact
@@ -191,9 +195,7 @@ function Hero() {
                 </a>
               </Magnetic>
               <Magnetic>
-                <a href="/Nithin_K_Resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold hover:brightness-110 transition shadow-[var(--shadow-glow)]">
-                  <Download className="w-4 h-4" /> Open Resume
-                </a>
+                <ResumeDownload variant="primary" label="Download Resume" />
               </Magnetic>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium hover:border-primary transition">
                 Contact me
@@ -409,7 +411,7 @@ function Education() {
     { title: "Pre-University (PCMB)", org: "Krupanidhi Pre-University College", period: "2021 – 2022" },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section id="education" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Education" title="Academic background" />
       <div className="grid md:grid-cols-3 gap-4">
         {items.map((i, idx) => (
@@ -426,7 +428,7 @@ function Education() {
 
 function Certifications() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section id="certifications" className="mx-auto max-w-6xl px-6 py-20">
       <SectionHeader tag="Certifications" title="Credentials & publications" />
       <div className="grid sm:grid-cols-2 gap-3">
         {certs.map((c, i) => (
