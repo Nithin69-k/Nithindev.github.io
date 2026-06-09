@@ -454,9 +454,7 @@ function SkillsSection() {
                   <span className="font-mono text-xs text-[#A78BFA]">{cat.level}%</span>
                 </div>
                 <div className="mt-3 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                  <Reveal as="div" className="block">
-                    <div className="h-full rounded-full" style={{ width: `${cat.level}%`, background: "linear-gradient(90deg,#7C3AED,#06B6D4,#F97316)" }} />
-                  </Reveal>
+                  <div className="h-full rounded-full transition-[width] duration-1000 ease-out" style={{ width: `${cat.level}%`, background: "linear-gradient(90deg,#7C3AED,#06B6D4,#F97316)" }} />
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {cat.items.map((s) => (
