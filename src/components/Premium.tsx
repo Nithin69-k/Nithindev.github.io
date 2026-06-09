@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Command, Search, Github, Linkedin, Mail, FileText, Briefcase, GraduationCap, Award, Code2, Sparkles, ArrowUp, Star, GitFork, Loader2 } from "lucide-react";
 
 const reduced = () =>
@@ -540,6 +540,3 @@ export function CmdHint() {
     </div>
   );
 }
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const _unused: ReactNode = null;
