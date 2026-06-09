@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Cpu, Send, Quote, Trophy, FlaskConical } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ExternalLink, ArrowRight, Sparkles, Code2, Brain, BarChart3, Smartphone, Database, Cpu, Send, Trophy, FlaskConical, Award as AwardIcon, GraduationCap as GraduationCapIcon } from "lucide-react";
 import { Reveal, useParallax } from "@/components/Reveal";
 import { ScrollProgress, Magnetic, Tilt, CountUp, Aurora, Particles } from "@/components/Effects";
 import { ResumeDownload } from "@/components/ResumeDownload";
@@ -299,9 +299,9 @@ function SocialPill({ href, icon: Icon, label }: { href: string; icon: typeof Gi
 function Stats() {
   const items = [
     { value: 5, suffix: "+", label: "Projects Done", icon: Code2 },
-    { value: 9, suffix: "+", label: "Certifications", icon: Award2 },
+    { value: 9, suffix: "+", label: "Certifications", icon: AwardIcon },
     { value: 2, suffix: "", label: "Industry Internships", icon: Trophy },
-    { value: 16, suffix: " mo", label: "IIT Indore AI Track", icon: GraduationCap2 },
+    { value: 16, suffix: " mo", label: "IIT Indore AI Track", icon: GraduationCapIcon },
   ];
   return (
     <section className="mx-auto max-w-6xl px-6 -mt-6 mb-16">
@@ -319,8 +319,6 @@ function Stats() {
     </section>
   );
 }
-// re-import to avoid name clash with lucide Award/GraduationCap above (used elsewhere)
-import { Award as Award2, GraduationCap as GraduationCap2 } from "lucide-react";
 
 /* ---------- About / Story cards ---------- */
 function About() {
@@ -684,5 +682,5 @@ function Footer() {
   );
 }
 
-// Suppress unused-import warnings for icons reserved for future cards
-void Quote;
+// Touch icons referenced via objects so strict unused-import checks stay quiet
+void [Database, Smartphone, FlaskConical];
