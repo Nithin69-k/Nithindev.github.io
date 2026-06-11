@@ -206,7 +206,7 @@ function Hero() {
             <h1 className="font-display text-5xl md:text-7xl font-bold leading-[1.02]">
               <AnimatedName text="Nithin K" />
               <span className="block mt-3 text-3xl md:text-5xl text-white/90">
-                <TypingRoles roles={["Android Developer", "AI Enthusiast", "Data Science Learner", "Problem Solver", "Full Stack Builder"]} />
+                <TypingRoles roles={["Android Developer", "AI Enthusiast", "Data Science Learner", "Problem Solver"]} />
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-base md:text-lg text-white/65 animate-fade-up delay-200">
