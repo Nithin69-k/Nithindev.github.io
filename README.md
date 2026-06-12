@@ -24,6 +24,14 @@ emits `.vercel/output` automatically on any CI environment.
 
 `vercel.json` is included for security headers and is otherwise optional.
 
+### Images / certificates not visible on Vercel
+
+Images, portrait, and certificates are hosted on the Lovable CDN under
+`/__l5e/assets-v1/...`. On Vercel, those paths are proxied to the stable
+Lovable URL via a `rewrites` rule in `vercel.json` — no extra setup needed.
+If you fork the project, update the project ID in that rewrite destination
+to match your own Lovable project.
+
 ## Tech stack
 
 - TanStack Start v1 (file-based routing in `src/routes/`)
