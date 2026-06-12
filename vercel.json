@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "rewrites": [
+    {
+      "source": "/__l5e/:path*",
+      "destination": "https://project--85c9a977-9f7f-4fcd-847d-807b5255b6ea.lovable.app/__l5e/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
